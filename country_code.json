@@ -1,0 +1,986 @@
+{
+  "Afghanistan": [
+    "AF",
+    "https://flagsapi.com/AF/flat/64.png"
+  ],
+  "\u00c5land Islands": [
+    "AX",
+    "https://flagsapi.com/AX/flat/64.png"
+  ],
+  "Albania": [
+    "AL",
+    "https://flagsapi.com/AL/flat/64.png"
+  ],
+  "Algeria": [
+    "DZ",
+    "https://flagsapi.com/DZ/flat/64.png"
+  ],
+  "American Samoa": [
+    "AS",
+    "https://flagsapi.com/AS/flat/64.png"
+  ],
+  "Andorra": [
+    "AD",
+    "https://flagsapi.com/AD/flat/64.png"
+  ],
+  "Angola": [
+    "AO",
+    "https://flagsapi.com/AO/flat/64.png"
+  ],
+  "Anguilla": [
+    "AI",
+    "https://flagsapi.com/AI/flat/64.png"
+  ],
+  "Antarctica": [
+    "AQ",
+    "https://flagsapi.com/AQ/flat/64.png"
+  ],
+  "Antigua and Barbuda": [
+    "AG",
+    "https://flagsapi.com/AG/flat/64.png"
+  ],
+  "Argentina": [
+    "AR",
+    "https://flagsapi.com/AR/flat/64.png"
+  ],
+  "Armenia": [
+    "AM",
+    "https://flagsapi.com/AM/flat/64.png"
+  ],
+  "Aruba": [
+    "AW",
+    "https://flagsapi.com/AW/flat/64.png"
+  ],
+  "Australia": [
+    "AU",
+    "https://flagsapi.com/AU/flat/64.png"
+  ],
+  "Austria": [
+    "AT",
+    "https://flagsapi.com/AT/flat/64.png"
+  ],
+  "Azerbaijan": [
+    "AZ",
+    "https://flagsapi.com/AZ/flat/64.png"
+  ],
+  "Bahamas": [
+    "BS",
+    "https://flagsapi.com/BS/flat/64.png"
+  ],
+  "Bahrain": [
+    "BH",
+    "https://flagsapi.com/BH/flat/64.png"
+  ],
+  "Bangladesh": [
+    "BD",
+    "https://flagsapi.com/BD/flat/64.png"
+  ],
+  "Barbados": [
+    "BB",
+    "https://flagsapi.com/BB/flat/64.png"
+  ],
+  "Belarus": [
+    "BY",
+    "https://flagsapi.com/BY/flat/64.png"
+  ],
+  "Belgium": [
+    "BE",
+    "https://flagsapi.com/BE/flat/64.png"
+  ],
+  "Belize": [
+    "BZ",
+    "https://flagsapi.com/BZ/flat/64.png"
+  ],
+  "Benin": [
+    "BJ",
+    "https://flagsapi.com/BJ/flat/64.png"
+  ],
+  "Bermuda": [
+    "BM",
+    "https://flagsapi.com/BM/flat/64.png"
+  ],
+  "Bhutan": [
+    "BT",
+    "https://flagsapi.com/BT/flat/64.png"
+  ],
+  "\"Bolivia": [
+    "BO",
+    "https://flagsapi.com/BO/flat/64.png"
+  ],
+  "\"Bonaire": [
+    "BQ",
+    "https://flagsapi.com/BQ/flat/64.png"
+  ],
+  "Bosnia and Herzegovina": [
+    "BA",
+    "https://flagsapi.com/BA/flat/64.png"
+  ],
+  "Botswana": [
+    "BW",
+    "https://flagsapi.com/BW/flat/64.png"
+  ],
+  "Bouvet Island": [
+    "BV",
+    "https://flagsapi.com/BV/flat/64.png"
+  ],
+  "Brazil": [
+    "BR",
+    "https://flagsapi.com/BR/flat/64.png"
+  ],
+  "British Indian Ocean Territory": [
+    "IO",
+    "https://flagsapi.com/IO/flat/64.png"
+  ],
+  "Brunei Darussalam": [
+    "BN",
+    "https://flagsapi.com/BN/flat/64.png"
+  ],
+  "Bulgaria": [
+    "BG",
+    "https://flagsapi.com/BG/flat/64.png"
+  ],
+  "Burkina Faso": [
+    "BF",
+    "https://flagsapi.com/BF/flat/64.png"
+  ],
+  "Burundi": [
+    "BI",
+    "https://flagsapi.com/BI/flat/64.png"
+  ],
+  "Cambodia": [
+    "KH",
+    "https://flagsapi.com/KH/flat/64.png"
+  ],
+  "Cameroon": [
+    "CM",
+    "https://flagsapi.com/CM/flat/64.png"
+  ],
+  "Canada": [
+    "CA",
+    "https://flagsapi.com/CA/flat/64.png"
+  ],
+  "Cape Verde": [
+    "CV",
+    "https://flagsapi.com/CV/flat/64.png"
+  ],
+  "Cayman Islands": [
+    "KY",
+    "https://flagsapi.com/KY/flat/64.png"
+  ],
+  "Central African Republic": [
+    "CF",
+    "https://flagsapi.com/CF/flat/64.png"
+  ],
+  "Chad": [
+    "TD",
+    "https://flagsapi.com/TD/flat/64.png"
+  ],
+  "Chile": [
+    "CL",
+    "https://flagsapi.com/CL/flat/64.png"
+  ],
+  "China": [
+    "CN",
+    "https://flagsapi.com/CN/flat/64.png"
+  ],
+  "Christmas Island": [
+    "CX",
+    "https://flagsapi.com/CX/flat/64.png"
+  ],
+  "Cocos (Keeling) Islands": [
+    "CC",
+    "https://flagsapi.com/CC/flat/64.png"
+  ],
+  "Colombia": [
+    "CO",
+    "https://flagsapi.com/CO/flat/64.png"
+  ],
+  "Comoros": [
+    "KM",
+    "https://flagsapi.com/KM/flat/64.png"
+  ],
+  "Congo": [
+    "CG",
+    "https://flagsapi.com/CG/flat/64.png"
+  ],
+  "\"Congo": [
+    "CD",
+    "https://flagsapi.com/CD/flat/64.png"
+  ],
+  "Cook Islands": [
+    "CK",
+    "https://flagsapi.com/CK/flat/64.png"
+  ],
+  "Costa Rica": [
+    "CR",
+    "https://flagsapi.com/CR/flat/64.png"
+  ],
+  "C\u00f4te d'Ivoire": [
+    "CI",
+    "https://flagsapi.com/CI/flat/64.png"
+  ],
+  "Croatia": [
+    "HR",
+    "https://flagsapi.com/HR/flat/64.png"
+  ],
+  "Cuba": [
+    "CU",
+    "https://flagsapi.com/CU/flat/64.png"
+  ],
+  "Cura\u00e7ao": [
+    "CW",
+    "https://flagsapi.com/CW/flat/64.png"
+  ],
+  "Cyprus": [
+    "CY",
+    "https://flagsapi.com/CY/flat/64.png"
+  ],
+  "Czech Republic": [
+    "CZ",
+    "https://flagsapi.com/CZ/flat/64.png"
+  ],
+  "Denmark": [
+    "DK",
+    "https://flagsapi.com/DK/flat/64.png"
+  ],
+  "Djibouti": [
+    "DJ",
+    "https://flagsapi.com/DJ/flat/64.png"
+  ],
+  "Dominica": [
+    "DM",
+    "https://flagsapi.com/DM/flat/64.png"
+  ],
+  "Dominican Republic": [
+    "DO",
+    "https://flagsapi.com/DO/flat/64.png"
+  ],
+  "Ecuador": [
+    "EC",
+    "https://flagsapi.com/EC/flat/64.png"
+  ],
+  "Egypt": [
+    "EG",
+    "https://flagsapi.com/EG/flat/64.png"
+  ],
+  "El Salvador": [
+    "SV",
+    "https://flagsapi.com/SV/flat/64.png"
+  ],
+  "Equatorial Guinea": [
+    "GQ",
+    "https://flagsapi.com/GQ/flat/64.png"
+  ],
+  "Eritrea": [
+    "ER",
+    "https://flagsapi.com/ER/flat/64.png"
+  ],
+  "Estonia": [
+    "EE",
+    "https://flagsapi.com/EE/flat/64.png"
+  ],
+  "Ethiopia": [
+    "ET",
+    "https://flagsapi.com/ET/flat/64.png"
+  ],
+  "Falkland Islands (Malvinas)": [
+    "FK",
+    "https://flagsapi.com/FK/flat/64.png"
+  ],
+  "Faroe Islands": [
+    "FO",
+    "https://flagsapi.com/FO/flat/64.png"
+  ],
+  "Fiji": [
+    "FJ",
+    "https://flagsapi.com/FJ/flat/64.png"
+  ],
+  "Finland": [
+    "FI",
+    "https://flagsapi.com/FI/flat/64.png"
+  ],
+  "France": [
+    "FR",
+    "https://flagsapi.com/FR/flat/64.png"
+  ],
+  "French Guiana": [
+    "GF",
+    "https://flagsapi.com/GF/flat/64.png"
+  ],
+  "French Polynesia": [
+    "PF",
+    "https://flagsapi.com/PF/flat/64.png"
+  ],
+  "French Southern Territories": [
+    "TF",
+    "https://flagsapi.com/TF/flat/64.png"
+  ],
+  "Gabon": [
+    "GA",
+    "https://flagsapi.com/GA/flat/64.png"
+  ],
+  "Gambia": [
+    "GM",
+    "https://flagsapi.com/GM/flat/64.png"
+  ],
+  "Georgia": [
+    "GE",
+    "https://flagsapi.com/GE/flat/64.png"
+  ],
+  "Germany": [
+    "DE",
+    "https://flagsapi.com/DE/flat/64.png"
+  ],
+  "Ghana": [
+    "GH",
+    "https://flagsapi.com/GH/flat/64.png"
+  ],
+  "Gibraltar": [
+    "GI",
+    "https://flagsapi.com/GI/flat/64.png"
+  ],
+  "Greece": [
+    "GR",
+    "https://flagsapi.com/GR/flat/64.png"
+  ],
+  "Greenland": [
+    "GL",
+    "https://flagsapi.com/GL/flat/64.png"
+  ],
+  "Grenada": [
+    "GD",
+    "https://flagsapi.com/GD/flat/64.png"
+  ],
+  "Guadeloupe": [
+    "GP",
+    "https://flagsapi.com/GP/flat/64.png"
+  ],
+  "Guam": [
+    "GU",
+    "https://flagsapi.com/GU/flat/64.png"
+  ],
+  "Guatemala": [
+    "GT",
+    "https://flagsapi.com/GT/flat/64.png"
+  ],
+  "Guernsey": [
+    "GG",
+    "https://flagsapi.com/GG/flat/64.png"
+  ],
+  "Guinea": [
+    "GN",
+    "https://flagsapi.com/GN/flat/64.png"
+  ],
+  "Guinea-Bissau": [
+    "GW",
+    "https://flagsapi.com/GW/flat/64.png"
+  ],
+  "Guyana": [
+    "GY",
+    "https://flagsapi.com/GY/flat/64.png"
+  ],
+  "Haiti": [
+    "HT",
+    "https://flagsapi.com/HT/flat/64.png"
+  ],
+  "Heard Island and McDonald Islands": [
+    "HM",
+    "https://flagsapi.com/HM/flat/64.png"
+  ],
+  "Holy See (Vatican City State)": [
+    "VA",
+    "https://flagsapi.com/VA/flat/64.png"
+  ],
+  "Honduras": [
+    "HN",
+    "https://flagsapi.com/HN/flat/64.png"
+  ],
+  "Hong Kong": [
+    "HK",
+    "https://flagsapi.com/HK/flat/64.png"
+  ],
+  "Hungary": [
+    "HU",
+    "https://flagsapi.com/HU/flat/64.png"
+  ],
+  "Iceland": [
+    "IS",
+    "https://flagsapi.com/IS/flat/64.png"
+  ],
+  "India": [
+    "IN",
+    "https://flagsapi.com/IN/flat/64.png"
+  ],
+  "Indonesia": [
+    "ID",
+    "https://flagsapi.com/ID/flat/64.png"
+  ],
+  "\"Iran": [
+    "IR",
+    "https://flagsapi.com/IR/flat/64.png"
+  ],
+  "Iraq": [
+    "IQ",
+    "https://flagsapi.com/IQ/flat/64.png"
+  ],
+  "Ireland": [
+    "IE",
+    "https://flagsapi.com/IE/flat/64.png"
+  ],
+  "Isle of Man": [
+    "IM",
+    "https://flagsapi.com/IM/flat/64.png"
+  ],
+  "Israel": [
+    "IL",
+    "https://flagsapi.com/IL/flat/64.png"
+  ],
+  "Italy": [
+    "IT",
+    "https://flagsapi.com/IT/flat/64.png"
+  ],
+  "Jamaica": [
+    "JM",
+    "https://flagsapi.com/JM/flat/64.png"
+  ],
+  "Japan": [
+    "JP",
+    "https://flagsapi.com/JP/flat/64.png"
+  ],
+  "Jersey": [
+    "JE",
+    "https://flagsapi.com/JE/flat/64.png"
+  ],
+  "Jordan": [
+    "JO",
+    "https://flagsapi.com/JO/flat/64.png"
+  ],
+  "Kazakhstan": [
+    "KZ",
+    "https://flagsapi.com/KZ/flat/64.png"
+  ],
+  "Kenya": [
+    "KE",
+    "https://flagsapi.com/KE/flat/64.png"
+  ],
+  "Kiribati": [
+    "KI",
+    "https://flagsapi.com/KI/flat/64.png"
+  ],
+  "\"Korea": [
+    "KR",
+    "https://flagsapi.com/KR/flat/64.png"
+  ],
+  "Kuwait": [
+    "KW",
+    "https://flagsapi.com/KW/flat/64.png"
+  ],
+  "Kyrgyzstan": [
+    "KG",
+    "https://flagsapi.com/KG/flat/64.png"
+  ],
+  "Lao People's Democratic Republic": [
+    "LA",
+    "https://flagsapi.com/LA/flat/64.png"
+  ],
+  "Latvia": [
+    "LV",
+    "https://flagsapi.com/LV/flat/64.png"
+  ],
+  "Lebanon": [
+    "LB",
+    "https://flagsapi.com/LB/flat/64.png"
+  ],
+  "Lesotho": [
+    "LS",
+    "https://flagsapi.com/LS/flat/64.png"
+  ],
+  "Liberia": [
+    "LR",
+    "https://flagsapi.com/LR/flat/64.png"
+  ],
+  "Libya": [
+    "LY",
+    "https://flagsapi.com/LY/flat/64.png"
+  ],
+  "Liechtenstein": [
+    "LI",
+    "https://flagsapi.com/LI/flat/64.png"
+  ],
+  "Lithuania": [
+    "LT",
+    "https://flagsapi.com/LT/flat/64.png"
+  ],
+  "Luxembourg": [
+    "LU",
+    "https://flagsapi.com/LU/flat/64.png"
+  ],
+  "Macao": [
+    "MO",
+    "https://flagsapi.com/MO/flat/64.png"
+  ],
+  "\"Macedonia": [
+    "MK",
+    "https://flagsapi.com/MK/flat/64.png"
+  ],
+  "Madagascar": [
+    "MG",
+    "https://flagsapi.com/MG/flat/64.png"
+  ],
+  "Malawi": [
+    "MW",
+    "https://flagsapi.com/MW/flat/64.png"
+  ],
+  "Malaysia": [
+    "MY",
+    "https://flagsapi.com/MY/flat/64.png"
+  ],
+  "Maldives": [
+    "MV",
+    "https://flagsapi.com/MV/flat/64.png"
+  ],
+  "Mali": [
+    "ML",
+    "https://flagsapi.com/ML/flat/64.png"
+  ],
+  "Malta": [
+    "MT",
+    "https://flagsapi.com/MT/flat/64.png"
+  ],
+  "Marshall Islands": [
+    "MH",
+    "https://flagsapi.com/MH/flat/64.png"
+  ],
+  "Martinique": [
+    "MQ",
+    "https://flagsapi.com/MQ/flat/64.png"
+  ],
+  "Mauritania": [
+    "MR",
+    "https://flagsapi.com/MR/flat/64.png"
+  ],
+  "Mauritius": [
+    "MU",
+    "https://flagsapi.com/MU/flat/64.png"
+  ],
+  "Mayotte": [
+    "YT",
+    "https://flagsapi.com/YT/flat/64.png"
+  ],
+  "Mexico": [
+    "MX",
+    "https://flagsapi.com/MX/flat/64.png"
+  ],
+  "\"Micronesia": [
+    "FM",
+    "https://flagsapi.com/FM/flat/64.png"
+  ],
+  "\"Moldova": [
+    "MD",
+    "https://flagsapi.com/MD/flat/64.png"
+  ],
+  "Monaco": [
+    "MC",
+    "https://flagsapi.com/MC/flat/64.png"
+  ],
+  "Mongolia": [
+    "MN",
+    "https://flagsapi.com/MN/flat/64.png"
+  ],
+  "Montenegro": [
+    "ME",
+    "https://flagsapi.com/ME/flat/64.png"
+  ],
+  "Montserrat": [
+    "MS",
+    "https://flagsapi.com/MS/flat/64.png"
+  ],
+  "Morocco": [
+    "MA",
+    "https://flagsapi.com/MA/flat/64.png"
+  ],
+  "Mozambique": [
+    "MZ",
+    "https://flagsapi.com/MZ/flat/64.png"
+  ],
+  "Myanmar": [
+    "MM",
+    "https://flagsapi.com/MM/flat/64.png"
+  ],
+  "Namibia": [
+    "NA",
+    "https://flagsapi.com/NA/flat/64.png"
+  ],
+  "Nauru": [
+    "NR",
+    "https://flagsapi.com/NR/flat/64.png"
+  ],
+  "Nepal": [
+    "NP",
+    "https://flagsapi.com/NP/flat/64.png"
+  ],
+  "Netherlands": [
+    "NL",
+    "https://flagsapi.com/NL/flat/64.png"
+  ],
+  "New Caledonia": [
+    "NC",
+    "https://flagsapi.com/NC/flat/64.png"
+  ],
+  "New Zealand": [
+    "NZ",
+    "https://flagsapi.com/NZ/flat/64.png"
+  ],
+  "Nicaragua": [
+    "NI",
+    "https://flagsapi.com/NI/flat/64.png"
+  ],
+  "Niger": [
+    "NE",
+    "https://flagsapi.com/NE/flat/64.png"
+  ],
+  "Nigeria": [
+    "NG",
+    "https://flagsapi.com/NG/flat/64.png"
+  ],
+  "Niue": [
+    "NU",
+    "https://flagsapi.com/NU/flat/64.png"
+  ],
+  "Norfolk Island": [
+    "NF",
+    "https://flagsapi.com/NF/flat/64.png"
+  ],
+  "Northern Mariana Islands": [
+    "MP",
+    "https://flagsapi.com/MP/flat/64.png"
+  ],
+  "Norway": [
+    "NO",
+    "https://flagsapi.com/NO/flat/64.png"
+  ],
+  "Oman": [
+    "OM",
+    "https://flagsapi.com/OM/flat/64.png"
+  ],
+  "Pakistan": [
+    "PK",
+    "https://flagsapi.com/PK/flat/64.png"
+  ],
+  "Palau": [
+    "PW",
+    "https://flagsapi.com/PW/flat/64.png"
+  ],
+  "\"Palestine": [
+    "PS",
+    "https://flagsapi.com/PS/flat/64.png"
+  ],
+  "Panama": [
+    "PA",
+    "https://flagsapi.com/PA/flat/64.png"
+  ],
+  "Papua New Guinea": [
+    "PG",
+    "https://flagsapi.com/PG/flat/64.png"
+  ],
+  "Paraguay": [
+    "PY",
+    "https://flagsapi.com/PY/flat/64.png"
+  ],
+  "Peru": [
+    "PE",
+    "https://flagsapi.com/PE/flat/64.png"
+  ],
+  "Philippines": [
+    "PH",
+    "https://flagsapi.com/PH/flat/64.png"
+  ],
+  "Pitcairn": [
+    "PN",
+    "https://flagsapi.com/PN/flat/64.png"
+  ],
+  "Poland": [
+    "PL",
+    "https://flagsapi.com/PL/flat/64.png"
+  ],
+  "Portugal": [
+    "PT",
+    "https://flagsapi.com/PT/flat/64.png"
+  ],
+  "Puerto Rico": [
+    "PR",
+    "https://flagsapi.com/PR/flat/64.png"
+  ],
+  "Qatar": [
+    "QA",
+    "https://flagsapi.com/QA/flat/64.png"
+  ],
+  "R\u00e9union": [
+    "RE",
+    "https://flagsapi.com/RE/flat/64.png"
+  ],
+  "Romania": [
+    "RO",
+    "https://flagsapi.com/RO/flat/64.png"
+  ],
+  "Russian Federation": [
+    "RU",
+    "https://flagsapi.com/RU/flat/64.png"
+  ],
+  "Rwanda": [
+    "RW",
+    "https://flagsapi.com/RW/flat/64.png"
+  ],
+  "Saint Barth\u00e9lemy": [
+    "BL",
+    "https://flagsapi.com/BL/flat/64.png"
+  ],
+  "\"Saint Helena": [
+    "SH",
+    "https://flagsapi.com/SH/flat/64.png"
+  ],
+  "Saint Kitts and Nevis": [
+    "KN",
+    "https://flagsapi.com/KN/flat/64.png"
+  ],
+  "Saint Lucia": [
+    "LC",
+    "https://flagsapi.com/LC/flat/64.png"
+  ],
+  "Saint Martin (French part)": [
+    "MF",
+    "https://flagsapi.com/MF/flat/64.png"
+  ],
+  "Saint Pierre and Miquelon": [
+    "PM",
+    "https://flagsapi.com/PM/flat/64.png"
+  ],
+  "Saint Vincent and the Grenadines": [
+    "VC",
+    "https://flagsapi.com/VC/flat/64.png"
+  ],
+  "Samoa": [
+    "WS",
+    "https://flagsapi.com/WS/flat/64.png"
+  ],
+  "San Marino": [
+    "SM",
+    "https://flagsapi.com/SM/flat/64.png"
+  ],
+  "Sao Tome and Principe": [
+    "ST",
+    "https://flagsapi.com/ST/flat/64.png"
+  ],
+  "Saudi Arabia": [
+    "SA",
+    "https://flagsapi.com/SA/flat/64.png"
+  ],
+  "Senegal": [
+    "SN",
+    "https://flagsapi.com/SN/flat/64.png"
+  ],
+  "Serbia": [
+    "RS",
+    "https://flagsapi.com/RS/flat/64.png"
+  ],
+  "Seychelles": [
+    "SC",
+    "https://flagsapi.com/SC/flat/64.png"
+  ],
+  "Sierra Leone": [
+    "SL",
+    "https://flagsapi.com/SL/flat/64.png"
+  ],
+  "Singapore": [
+    "SG",
+    "https://flagsapi.com/SG/flat/64.png"
+  ],
+  "Sint Maarten (Dutch part)": [
+    "SX",
+    "https://flagsapi.com/SX/flat/64.png"
+  ],
+  "Slovakia": [
+    "SK",
+    "https://flagsapi.com/SK/flat/64.png"
+  ],
+  "Slovenia": [
+    "SI",
+    "https://flagsapi.com/SI/flat/64.png"
+  ],
+  "Solomon Islands": [
+    "SB",
+    "https://flagsapi.com/SB/flat/64.png"
+  ],
+  "Somalia": [
+    "SO",
+    "https://flagsapi.com/SO/flat/64.png"
+  ],
+  "South Africa": [
+    "ZA",
+    "https://flagsapi.com/ZA/flat/64.png"
+  ],
+  "South Georgia and the South Sandwich Islands": [
+    "GS",
+    "https://flagsapi.com/GS/flat/64.png"
+  ],
+  "South Sudan": [
+    "SS",
+    "https://flagsapi.com/SS/flat/64.png"
+  ],
+  "Spain": [
+    "ES",
+    "https://flagsapi.com/ES/flat/64.png"
+  ],
+  "Sri Lanka": [
+    "LK",
+    "https://flagsapi.com/LK/flat/64.png"
+  ],
+  "Sudan": [
+    "SD",
+    "https://flagsapi.com/SD/flat/64.png"
+  ],
+  "Suriname": [
+    "SR",
+    "https://flagsapi.com/SR/flat/64.png"
+  ],
+  "Svalbard and Jan Mayen": [
+    "SJ",
+    "https://flagsapi.com/SJ/flat/64.png"
+  ],
+  "Swaziland": [
+    "SZ",
+    "https://flagsapi.com/SZ/flat/64.png"
+  ],
+  "Sweden": [
+    "SE",
+    "https://flagsapi.com/SE/flat/64.png"
+  ],
+  "Switzerland": [
+    "CH",
+    "https://flagsapi.com/CH/flat/64.png"
+  ],
+  "Syrian Arab Republic": [
+    "SY",
+    "https://flagsapi.com/SY/flat/64.png"
+  ],
+  "\"Taiwan": [
+    "TW",
+    "https://flagsapi.com/TW/flat/64.png"
+  ],
+  "Tajikistan": [
+    "TJ",
+    "https://flagsapi.com/TJ/flat/64.png"
+  ],
+  "\"Tanzania": [
+    "TZ",
+    "https://flagsapi.com/TZ/flat/64.png"
+  ],
+  "Thailand": [
+    "TH",
+    "https://flagsapi.com/TH/flat/64.png"
+  ],
+  "Timor-Leste": [
+    "TL",
+    "https://flagsapi.com/TL/flat/64.png"
+  ],
+  "Togo": [
+    "TG",
+    "https://flagsapi.com/TG/flat/64.png"
+  ],
+  "Tokelau": [
+    "TK",
+    "https://flagsapi.com/TK/flat/64.png"
+  ],
+  "Tonga": [
+    "TO",
+    "https://flagsapi.com/TO/flat/64.png"
+  ],
+  "Trinidad and Tobago": [
+    "TT",
+    "https://flagsapi.com/TT/flat/64.png"
+  ],
+  "Tunisia": [
+    "TN",
+    "https://flagsapi.com/TN/flat/64.png"
+  ],
+  "Turkey": [
+    "TR",
+    "https://flagsapi.com/TR/flat/64.png"
+  ],
+  "Turkmenistan": [
+    "TM",
+    "https://flagsapi.com/TM/flat/64.png"
+  ],
+  "Turks and Caicos Islands": [
+    "TC",
+    "https://flagsapi.com/TC/flat/64.png"
+  ],
+  "Tuvalu": [
+    "TV",
+    "https://flagsapi.com/TV/flat/64.png"
+  ],
+  "Uganda": [
+    "UG",
+    "https://flagsapi.com/UG/flat/64.png"
+  ],
+  "Ukraine": [
+    "UA",
+    "https://flagsapi.com/UA/flat/64.png"
+  ],
+  "United Arab Emirates": [
+    "AE",
+    "https://flagsapi.com/AE/flat/64.png"
+  ],
+  "United Kingdom": [
+    "GB",
+    "https://flagsapi.com/GB/flat/64.png"
+  ],
+  "United States": [
+    "US",
+    "https://flagsapi.com/US/flat/64.png"
+  ],
+  "United States Minor Outlying Islands": [
+    "UM",
+    "https://flagsapi.com/UM/flat/64.png"
+  ],
+  "Uruguay": [
+    "UY",
+    "https://flagsapi.com/UY/flat/64.png"
+  ],
+  "Uzbekistan": [
+    "UZ",
+    "https://flagsapi.com/UZ/flat/64.png"
+  ],
+  "Vanuatu": [
+    "VU",
+    "https://flagsapi.com/VU/flat/64.png"
+  ],
+  "\"Venezuela": [
+    "VE",
+    "https://flagsapi.com/VE/flat/64.png"
+  ],
+  "Viet Nam": [
+    "VN",
+    "https://flagsapi.com/VN/flat/64.png"
+  ],
+  "\"Virgin Islands": [
+    "VI",
+    "https://flagsapi.com/VI/flat/64.png"
+  ],
+  "Wallis and Futuna": [
+    "WF",
+    "https://flagsapi.com/WF/flat/64.png"
+  ],
+  "Western Sahara": [
+    "EH",
+    "https://flagsapi.com/EH/flat/64.png"
+  ],
+  "Yemen": [
+    "YE",
+    "https://flagsapi.com/YE/flat/64.png"
+  ],
+  "Zambia": [
+    "ZM",
+    "https://flagsapi.com/ZM/flat/64.png"
+  ]
+}
