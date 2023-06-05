@@ -1,6 +1,5 @@
 import json
 import requests
-from abc import ABC, abstractmethod
 
 API_KEY = "abc7bcb8"
 
@@ -32,16 +31,27 @@ def fetch_movie_data(filename):
     :param filename:
     :return:
     """
-    with open(filename, "r") as reader:
+    while True:
         try:
-            data = json.loads(reader.read())
-        except json.decoder.JSONDecodeError:
-            return []
-        else:
-            return data
+            with open(filename, "r") as reader:
+                try:
+                    data = json.loads(reader.read())
+                except json.decoder.JSONDecodeError:
+                    return []
+                else:
+                    return data
+        except FileNotFoundError:
+            save_to_file(filename)
+            with open(filename, "r") as reader:
+                try:
+                    data = json.loads(reader.read())
+                except json.decoder.JSONDecodeError:
+                    return []
+                else:
+                    return data
 
 
-def save_to_file(filename, new_content):
+def save_to_file(filename, new_content=None):
     """
     This method gets the new content as the argument, which is then parsed to overwrite the old content
     of the file in filename
@@ -49,7 +59,10 @@ def save_to_file(filename, new_content):
     :param new_content:
     :return:
     """
-    content = json.dumps(new_content, indent=2)
+    if new_content is not None:
+        content = json.dumps(new_content, indent=2)
+    else:
+        content = json.dumps([], indent=2)
     with open(filename, "w") as writer:
         writer.write(content)
 
@@ -74,6 +87,10 @@ def search_title_in_api(param, title=True, movie_id=False):
         url = API_URL_ID_PREFIX + param + API_URL_ID_SUFFIX + API_KEY
     else:
         url = API_URL_DEFAULT  # Maybe this else is redundant
+    # Initialize the required keys and the dictionary to return
+    required_keys = {"title": "Title", "year": "Year", "rating": "imdbRating",
+                     "poster_image_url": "Poster", "imdb_id": "imdbID", "country": "Country"}
+    dict_to_return = {}
 
     # Catch ConnectionError Exception
     try:
@@ -91,17 +108,23 @@ def search_title_in_api(param, title=True, movie_id=False):
         elif movie_data_dict["Error"] == "ConnectionError":
             raise ConnectionError  # This exception is handled by the caller in program_functions.py
     else:
-        title = movie_data_dict["Title"]
-        year = movie_data_dict["Year"]
-        rating = movie_data_dict["imdbRating"]
-        poster_image_url = movie_data_dict["Poster"]
-        imdb_id = movie_data_dict["imdbID"]
-        country = movie_data_dict["Country"].split(",")[0]
-        flag_image_url = get_flag_url(country)
-        return {"title": title, "year": int(year.split("–")[0]), "rating": float(rating),
-                "poster_image_url": poster_image_url, "imdb_id": imdb_id, "country": country,
-                "flag_image_url": flag_image_url}
+        for key, val in required_keys.items():
+            try:
+                if key == "year":
+                    dict_to_return[key] = int(movie_data_dict[val].split(",")[0])
+                elif key == "rating":
+                    dict_to_return[key] = float(movie_data_dict[val].split(",")[0])
+                else:
+                    dict_to_return[key] = movie_data_dict[val].split(",")[0]
+            except KeyError:
+                continue
+        flag_image_url = get_flag_url(movie_data_dict["Country"].split(",")[0])
+        dict_to_return["flag_image_url"] = flag_image_url
+        return dict_to_return
 
+
+# ----------------------------------------- FLAG ----------------------------------------- #
+# ---------------------------------------------------------------------------------------- #
 
 def get_country_code(country):
     """
@@ -115,18 +138,6 @@ def get_country_code(country):
     return country_data[country][0]
 
 
-def get_flag_url(country):
-    """
-    This will get the flag url associated to the name of the country passed as the argument
-    :param country:
-    :return:
-    """
-    file_to_read = "../movies/country_code.json"
-    with open(file_to_read, "r") as reader:
-        country_data = json.loads(reader.read())
-    return country_data[country][1]
-
-
 def load_countries_data():
     """
     This method loads the country_code.csv file downloaded online into a country_code.json file. The data structure
@@ -138,17 +149,29 @@ def load_countries_data():
     file_to_read = "../movies/country_code.csv"
     file_to_write = "../movies/country_code.json"
     with open(file_to_read, "r") as reader:
-        data = reader.readlines()[1:-1]
+        data = [line for line in reader.readlines() if line]
     country_data = {}
     for line in data:
         if not line.split(",")[0] == "Name" and not line.split(",")[1] == "Code" and line:
             country = line.split(",")[0]  # .replace('"', "")
             code = line.split(",")[-1][:-1]  # .replace('"', "")
-        """
-        The expression below only replaced the last ":size" str with flag_size. The rest of the str stayed the same.
-        for place_holder in ((":country_code", f"{code}"), (":style", f"{FLAG_STYLE}"), (":size", f"{FLAG_SIZE}")):
-            flag = API_URL_FLAG.replace(*place_holder)
-        """
+        else:
+            continue
         flag_image_url = URL_FLAG_Prefix + code + "/" + FLAG_STYLE + "/" + FLAG_SIZE + URL_FLAG_SUFFIX
         country_data[country] = [code, flag_image_url]
     save_to_file(file_to_write, country_data)
+
+
+def get_flag_url(country):
+    """
+    This will get the flag url associated to the name of the country passed as the argument
+    :param country:
+    :return:
+    """
+    file_to_read = "../movies/country_code.json"
+    with open(file_to_read, "r") as reader:
+        country_data = json.loads(reader.read())
+    return country_data[country][1]
+
+# ---------------------------------------------------------------------------------------- #
+# ----------------------------------------- FLAG ----------------------------------------- #

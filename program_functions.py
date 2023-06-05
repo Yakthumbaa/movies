@@ -1,6 +1,6 @@
 import math
 import random
-import movie_storage
+import data_parser
 import movies
 
 HTML_TEMPLATE = "index_template.html"
@@ -18,7 +18,7 @@ def sort_movie_db(filename):
     :param filename:
     :return: sorted list of movies info dictionary
     """
-    movies_list = movie_storage.fetch_movie_data(filename)
+    movies_list = data_parser.fetch_movie_data(filename)
     sorted_list = sorted(movies_list, key=lambda item: item['rating'], reverse=True)
     return sorted_list
 
@@ -34,91 +34,6 @@ def sort_movie_list(movies_list):
     sorted_list = sorted(movies_list, key=lambda item: item['rating'], reverse=True)
     return sorted_list
 '''
-
-
-def list_movies(filename, movies_list=None):
-    """
-    Method to list all the movies + ratings from the movies dictionary
-    :param movies_list:
-    :param filename:
-    :return:
-    """
-    if movies_list is None:
-        movies_list = movie_storage.fetch_movie_data(filename)
-    num_movies = len(movies_list)
-    print(f"\n{num_movies} movies in total")
-    if num_movies:
-        for movies_info_dict in movies_list:
-            print(f"{movies_info_dict['title']}: {movies_info_dict['rating']}")
-    else:
-        print("\nPlease add a movie!")
-
-
-def add_movie(filename):
-    """
-    Method to add a movie
-    :param filename:
-    :return:
-    """
-    movies_list = movie_storage.fetch_movie_data(filename)
-    title = input("\nEnter new movie name: ").title()
-    try:
-        movies_data = movie_storage.search_title_in_api(title, title=True, movie_id=False)
-    except KeyError:
-        print(f"\nThere is no movie called '{title}' in the Database!")
-        return
-    except ConnectionError:
-        print("\nCould not connect to the internet. Please check your connection...")
-        return
-    else:
-        # validate entry - To ensure no duplicate entries!
-        list_of_movies = [title for movies_dict in movies_list for key, title in movies_dict.items() if key == "title"]
-        if movies_data["title"] not in list_of_movies:
-            movies_list.append(movies_data)
-            movie_storage.save_to_file(filename, movies_list)
-            print(f"\nMovie '{movies_data['title']}' successfully added!")
-        else:
-            print(f"\nMovie '{movies_data['title']}' is already in the file!")
-    # print(movies_list)  # @TEST
-
-
-def delete_movie(filename):
-    """
-    Method to delete a movie from the json file
-    :param filename:
-    :return:
-    """
-    title = input("\nEnter movie name to delete: ").title()
-    current_movies_data = movie_storage.fetch_movie_data(filename)
-    try:
-        # movie_storage.del_movie(filename, title)
-        new_movies_data = [i for i in current_movies_data if not (i['title'] == title)]
-    except KeyError:
-        print("No such movie exists")
-    else:
-        movie_storage.save_to_file(filename, new_movies_data)
-        print(f"{title} has been successfully deleted!\n")
-
-
-def update_movies(filename):
-    """
-    Method to update the rating of a movie in the list
-    :param filename:
-    :return:
-    """
-    movies_list = movie_storage.fetch_movie_data(filename)
-    title = input("\nEnter movie name: ").title()
-    values = [val for dic in movies_list for val in dic.values()]
-
-    if title in values:
-        movie_note = input("Enter movie notes: ")
-        for movie in movies_list:
-            if movie['title'] == title:
-                movie['movie_note'] = movie_note
-        movie_storage.save_to_file(filename, movies_list)
-        print(f"{title}: {movie_note} || Successfully updated!")
-    else:
-        print("\nMovie not in the list!")
 
 
 def get_average(movies_list):
@@ -150,15 +65,15 @@ def get_median(movies_list):
     """
     num_of_movies = len(movies_list)
     if num_of_movies % 2 == 0:
-        midpoint_1 = int(num_of_movies / 2)
+        midpoint_1 = int(num_of_movies / 2) - 1
         value_mid_1 = movies_list[midpoint_1]["rating"]
 
-        midpoint_2 = int(num_of_movies / 2 + 1)
+        midpoint_2 = int(num_of_movies / 2 + 1) - 1
         value_mid_2 = movies_list[midpoint_2]["rating"]
 
         median = round((value_mid_1 + value_mid_2) / 2, 1)
     else:
-        midpoint = int(math.ceil(num_of_movies / 2))
+        midpoint = int(math.ceil(num_of_movies / 2)) - 1
         median = movies_list[midpoint]["rating"]
     return median
 
@@ -187,6 +102,7 @@ def get_stats(filename):
     """
     # fetch the sorted list of movies dictionary
     movies_list = sort_movie_db(filename)
+    print(movies_list)  # -> @TEST
     print(f"\n{'*' * 10}\tStats\t{'*' * 10}")
     # Average rating
     print(f"\nAverage rating: {get_average(movies_list)}")
@@ -209,7 +125,7 @@ def get_random(filename):
     :param filename:
     :return:
     """
-    movies_list = movie_storage.fetch_movie_data(filename)
+    movies_list = data_parser.fetch_movie_data(filename)
     choices = [val for movie_dict in movies_list for key, val in movie_dict.items() if key == "title"]
     return random.choice(choices)
 
@@ -221,7 +137,7 @@ def search_movie(filename):
     :return:
     """
     str_to_search = input("\nEnter part of movie name: ").lower().title()
-    movies_list = movie_storage.fetch_movie_data(filename)
+    movies_list = data_parser.fetch_movie_data(filename)
 
     for movies_dict in movies_list:
         if str_to_search in movies_dict["title"]:
@@ -292,7 +208,7 @@ def create_html_file(db_filename, html_filename):
     :param html_filename:
     :return: void
     """
-    movies_list = movie_storage.fetch_movie_data(db_filename)
+    movies_list = data_parser.fetch_movie_data(db_filename)
     # print(movies_list)
     with open(HTML_TEMPLATE, "r") as reader:
         content = reader.read()

@@ -6,19 +6,27 @@ This code is divided into multiple files according to their roles.
 --> program_functions.py: This file contains all the high level methods that is called by the console.
     It also contains some low level methods that takes the movies_list as a parameter. High level methods
     take the json filename as the parameter to get the updated movies list.
---> movie_storage.py: This file has the methods to fetch data from json file, to save data to json file and
-    to fetch the movie's info dictionary from the API
+--> data_parser.py: This file has the methods to parse data and handles all the data parsing requirements
 """
 import program_functions
-import movie_storage
+import data_parser
+import storage_json
 
-# Initialize the fields
-VALID_CHOICES = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-FILENAME = "movies_data.json"
-HTML_FILENAME = "index.html"
-# The data in this ^^^^^^^^^ file should be a list containing dictionaries with movie's information.
-# eg. [{key-value pairs of movie 1's info}, {key-value pairs of movie 2's info}]
 TITLE = "Masterschool's Movie App"
+
+
+def display_home():
+    """
+    Home screen. A user can log in to their account to access their own
+    movies database
+    :return:
+    """
+    print("********** Movies App Login **********")
+    print("\nMenu:")
+    print("1. Login")
+    print("2. Register")
+    print("3. Forgot password")
+    print("0. Exit")
 
 
 def display_menu(first_time=False):
@@ -31,7 +39,6 @@ def display_menu(first_time=False):
     if first_time:
         print("********** My Movies Database **********")
     print("\nMenu:")
-    print("0. Exit")
     print("1. List movies")
     print("2. Add movie")
     print("3. Delete movie")
@@ -41,36 +48,43 @@ def display_menu(first_time=False):
     print("7. Search movie")
     print("8. Movies sorted by rating")
     print("9. Generate website")
+    print("0. Exit")
 
 
-def console(filename):
+def console(storage):
     """
     This method runs the program in a listener loop.
-    :param filename:
+    :param storage: storage object (json or csv)
     :return:
     """
-    prompt = f"\nEnter choice ({VALID_CHOICES[0]}-{VALID_CHOICES[-1]}): "
+    # Initialize the fields
+    valid_choices = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+    filename = storage.get_file_path()
+    html_filename = "index.html"
+    # The data in this ^^^^^^^^^ file should be a list containing dictionaries with movie's information.
+    # eg. [{key-value pairs of movie 1's info}, {key-value pairs of movie 2's info}]
+    main_menu_prompt = f"\nEnter choice ({valid_choices[0]}-{valid_choices[-1]}): "
     finished = False
     display_menu(first_time=True)
 
     while not finished:
-        option = program_functions.validate_input(prompt, VALID_CHOICES)
+        option = program_functions.validate_input(main_menu_prompt, valid_choices)
         # Exit - DONE
         if option == 0:
             print("\n\t\t\t\t\t\t\tBye!!!")
             return
         # List movies - DONE
         elif option == 1:
-            program_functions.list_movies(filename, movies_list=None)
+            storage.list_movies(movies_list=None)
         # Add movie - DONE
         elif option == 2:
-            program_functions.add_movie(filename)
+            storage.add_movie()
         # Delete movie - Done
         elif option == 3:
-            program_functions.delete_movie(filename)
+            storage.delete_movie()
         # Update Movie - Done
         elif option == 4:
-            program_functions.update_movies(filename)
+            storage.update_movie()
         # Stats - Done
         elif option == 5:
             program_functions.get_stats(filename)
@@ -83,10 +97,10 @@ def console(filename):
             program_functions.search_movie(filename)
         # Sort movies by rating - Done
         elif option == 8:
-            program_functions.list_movies(filename, movies_list=program_functions.sort_movie_db(filename))
+            storage.list_movies(movies_list=program_functions.sort_movie_db(filename))
         # Generate website
         elif option == 9:
-            program_functions.create_html_file(filename, HTML_FILENAME)
+            program_functions.create_html_file(filename, html_filename)
         # Something went wrong. Continue with the program
         else:
             print("\nOops! Something went wrong! Please continue...\n")
@@ -95,15 +109,15 @@ def console(filename):
         display_menu(first_time=False)
 
 
-def run_program(filename):
+def run_program(storage):
     """
     This method wraps the program function in a try except to intercept a KeyboardInterrupt and prints
     a neat goodbye message instead of the exception!
-    :param filename:
+    :param storage:
     :return:
     """
     try:
-        console(filename)
+        console(storage)
     except KeyboardInterrupt:
         print("\n\t\t\t\t\t\t\tBye!!!")
 
@@ -111,8 +125,14 @@ def run_program(filename):
 def main():
     # Run the expression below once to load the country_code.json file with data formatted as:
     # {country_A: [code, flag_image_url], country_B: [code, flag_image_url]}
-    movie_storage.load_countries_data()
-    run_program(FILENAME)
+    # data_parser.load_countries_data()
+    user_name = input("Enter your name: ")
+    file_path = user_name + ".json"
+    storage = storage_json.StorageJson(file_path)
+    # print(storage)  # @TEST
+    # print(type(storage))  # @TEST
+    # print(storage.get_file_path())  # @TEST
+    run_program(storage)
 
 
 if __name__ == "__main__":
