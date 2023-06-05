@@ -16,13 +16,13 @@ class StorageJson(IStorage):
         if movies_list is None:
             movies_list = data_parser.fetch_movie_data(self.file_path)
         num_movies = len(movies_list)
-        print(f"num_movies: {num_movies}")
+        # print(f"num_movies: {num_movies}")  # -> @TEST
         print(f"\n{num_movies} movies in total")
         if num_movies:
             for movies_info_dict in movies_list:
                 print(f"{movies_info_dict['title']}: {movies_info_dict['rating']}")
         else:
-            print("\nPlease add a movie!")
+            print("Please add a movie!")
 
     def add_movie(self):
         """
@@ -30,11 +30,11 @@ class StorageJson(IStorage):
         :return:
         """
         movies_list = data_parser.fetch_movie_data(self.file_path)
-        print(f"Movies_list: {movies_list}")  # -> @TEST
+        # print(f"Movies_list: {movies_list}")  # -> @TEST
         title = input("\nEnter new movie name: ").title()
         try:
             movies_data = data_parser.search_title_in_api(title, title=True, movie_id=False)
-            print(f"Movies_data: {movies_data}")  # -> @TEST
+            # print(f"Movies_data: {movies_data}")  # -> @TEST
         except KeyError:
             print(f"\nThere is no movie called '{title}' in the Database!")
             return
@@ -58,16 +58,29 @@ class StorageJson(IStorage):
         Method to delete a movie from the json file
         :return:
         """
-        title = input("\nEnter movie name to delete: ").title()
+        title = input("\nEnter movie name to delete: ").lower()
         current_movies_data = data_parser.fetch_movie_data(self.file_path)
+        # print(f"Current movies data: {current_movies_data}")  # -> @TEST
+        movie_titles_in_file = [title.lower() for movies_dict in current_movies_data
+                                for key, title in movies_dict.items() if key == "title"]
+        # print(f"Movie titles: {movie_titles_in_file}")  # -> @TEST
+        if title in movie_titles_in_file:
+            new_movies_data = [i for i in current_movies_data if not (i['title'].lower() == title)]
+            # print(f"New list: {new_movies_data}")  # -> @TEST
+            data_parser.save_to_file(self.file_path, new_movies_data)
+            print(f"{title.title()} has been successfully deleted!\n")
+        else:
+            print(f"'{title.title()}' movie does not exist")
+        """
         try:
             # movie_storage.del_movie(filename, title)
-            new_movies_data = [i for i in current_movies_data if not (i['title'] == title)]
+            # new_movies_data = [i for i in current_movies_data if not (i['title'] == title)]
         except KeyError:
             print("No such movie exists")
         else:
             data_parser.save_to_file(self.file_path, new_movies_data)
             print(f"{title} has been successfully deleted!\n")
+        """
 
     def update_movie(self):
         """

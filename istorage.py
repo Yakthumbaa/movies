@@ -29,3 +29,4 @@ class IStorage(ABC):
 
     def set_file_path(self, new_file_path):
         self.file_path = new_file_path
+

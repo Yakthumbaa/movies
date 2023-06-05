@@ -24,6 +24,27 @@ URL_FLAG_Prefix = "https://flagsapi.com/"
 URL_FLAG_SUFFIX = ".png"
 
 
+def validate_input(prompt, valid_choices):
+    """
+    Method to validate the user input. The option input has to be an int
+    :param prompt:
+    :param valid_choices:
+    :return:
+    """
+    valid = False
+    while not valid:
+        user_input = input(prompt)
+        try:
+            option = int(user_input)
+        except ValueError:
+            print("\nInvalid command! Please enter an integer...")
+        else:
+            if option in valid_choices:
+                return option
+            else:
+                print("\nInvalid option!")
+
+
 def fetch_movie_data(filename):
     """
     This method is to fetch the movies information data from the file with the filename that is
@@ -117,7 +138,15 @@ def search_title_in_api(param, title=True, movie_id=False):
                 else:
                     dict_to_return[key] = movie_data_dict[val].split(",")[0]
             except KeyError:
-                continue
+                if key == "rating":
+                    dict_to_return[key] = 0
+                else:
+                    continue
+            except ValueError:
+                if key == "rating":
+                    dict_to_return[key] = 0
+                else:
+                    continue
         flag_image_url = get_flag_url(movie_data_dict["Country"].split(",")[0])
         dict_to_return["flag_image_url"] = flag_image_url
         return dict_to_return

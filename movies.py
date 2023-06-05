@@ -9,10 +9,7 @@ This code is divided into multiple files according to their roles.
 --> data_parser.py: This file has the methods to parse data and handles all the data parsing requirements
 """
 import program_functions
-import data_parser
 import storage_json
-
-TITLE = "Masterschool's Movie App"
 
 
 def display_home():
