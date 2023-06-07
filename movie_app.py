@@ -349,23 +349,3 @@ class MovieApp:
             self.console(valid_choices, main_menu_prompt)
         except KeyboardInterrupt:
             print("\n\t\t\t\t\t\t\tBye!!!")
-
-
-def main():
-    # Run the expression below once to load the country_code.json file with data formatted as:
-    # {country_A: [code, flag_image_url], country_B: [code, flag_image_url]}
-    # data_parser.load_countries_data()
-    user_name = input("Enter your name: ")
-    file_path_json = user_name + ".json"
-    file_path_csv = user_name + ".csv"
-    # storage = storage_json.StorageJson(file_path_json)
-    storage = storage_csv.StorageCSV(file_path_csv)
-    movie_app = MovieApp(storage)
-    # print(storage)  # @TEST
-    # print(type(storage))  # @TEST
-    # print(storage.get_file_path())  # @TEST
-    movie_app.run_program()
-
-
-if __name__ == "__main__":
-    main()
