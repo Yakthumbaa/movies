@@ -1,7 +1,7 @@
 import random
 import math
 import storage_json
-import data_parser
+import storage_csv
 
 HTML_TEMPLATE = "index_template.html"
 TITLE = "Masterschool's Movie App"
@@ -17,7 +17,27 @@ class MovieApp:
         return self._storage
 
     @staticmethod
-    def sort_movie_db(filename):
+    def validate_input(prompt, valid_choices):
+        """
+        Method to validate the user input. The option input has to be an int
+        :param prompt:
+        :param valid_choices:
+        :return:
+        """
+        valid = False
+        while not valid:
+            user_input = input(prompt)
+            try:
+                option = int(user_input)
+            except ValueError:
+                print("\nInvalid command! Please enter an integer...")
+            else:
+                if option in valid_choices:
+                    return option
+                else:
+                    print("\nInvalid option!")
+
+    def sort_movie_db(self, filename):
         """
         Method to sort the movies list of dictionaries - obtained from the current json file, by rating
         (descending order).
@@ -26,7 +46,7 @@ class MovieApp:
         :param filename:
         :return: sorted list of movies info dictionary
         """
-        movies_list = data_parser.fetch_movie_data(filename)
+        movies_list = self.get_storage().fetch_movie_data(filename)
         sorted_list = sorted(movies_list, key=lambda item: item['rating'], reverse=True)
         return sorted_list
 
@@ -96,56 +116,57 @@ class MovieApp:
         :return:
         """
         # fetch the sorted list of movies dictionary
-        movies_list = self.sort_movie_db(filename)
-        num_of_movies = len(movies_list)
-        # print(movies_list)  # -> @TEST
+        sorted_movies_list = self.sort_movie_db(filename)
+        # print(f"Movies_list = {sorted_movies_list}")  # @TEST
+        num_of_movies = len(sorted_movies_list)
+        # print(sorted_movies_list)  # -> @TEST
         print(f"\n{'*' * 10}\tStats\t{'*' * 10}")
         if num_of_movies:
             # Average rating
-            print(f"Average rating: {self.get_average(movies_list)}")
+            print(f"Average rating: {self.get_average(sorted_movies_list)}")
             # Median rating
-            print(f"Median rating: {self.get_median(movies_list)}")
+            print(f"Median rating: {self.get_median(sorted_movies_list)}")
             # Best and Worst
-            best, worst = self.get_best_worst(movies_list)
+            best, worst = self.get_best_worst(sorted_movies_list)
             print("Best movie/s:")
             for movie in best:
-                print(movie["title"])
+                print(f"\t{movie['title']}")
             print("Worst movie/s:")
             for movie in worst:
-                print(movie["title"])
+                print(f"\t{movie['title']}")
         else:
-            print("There is no movies in the list. Please add some...")
+            print("There is no movie in the list. Please add some...")
         print(f"{'*' * 10}\t END \t{'*' * 10}")
 
-    @staticmethod
-    def get_random(filename):
+    def get_random(self, filename):
         """
         Method to get a random movie from the list
         :param filename:
         :return:
         """
-        movies_list = data_parser.fetch_movie_data(filename)
+        movies_list = self.get_storage().fetch_movie_data(filename)
         choices = [val for movie_dict in movies_list for key, val in movie_dict.items() if key == "title"]
         return random.choice(choices)
 
-    @staticmethod
-    def search_movie(filename):
+    def search_movie(self, filename):
         """
         Method to search for a movie in the file by title of the movie
         :param filename:
         :return:
         """
+        display_properties = ["title", "rating", "country"]
         str_to_search = input("\nEnter part of movie name: ").title()
-        movies_list = data_parser.fetch_movie_data(filename)
+        movies_list = self.get_storage().fetch_movie_data(filename)
         counter = 0
 
         for movies_dict in movies_list:
             if str_to_search in movies_dict["title"]:
                 counter += 1
-                print()
+                print(f"\n{'*' * 10}\tResults\t{'*' * 10}")
                 for key, val in movies_dict.items():
-                    if not key == "poster_image_url":
+                    if key in display_properties:
                         print(f"{key}: {val}")
+                print(f"{'*' * 10}\t END \t{'*' * 10}")
         if counter == 0:
             print(f"'{str_to_search}' does not match any movie in the file...")
         """
@@ -209,8 +230,8 @@ class MovieApp:
         :param html_filename:
         :return: void
         """
-        movies_list = data_parser.fetch_movie_data(db_filename)
-        # print(movies_list)
+        movies_list = self.get_storage().fetch_movie_data(db_filename)
+        # print(movies_list)  # @TEST
         with open(HTML_TEMPLATE, "r") as reader:
             content = reader.read()
         # Prepare title
@@ -275,7 +296,7 @@ class MovieApp:
         self.display_menu(first_time=True)
 
         while not finished:
-            option = data_parser.validate_input(main_menu_prompt, valid_choices)
+            option = self.validate_input(main_menu_prompt, valid_choices)
             # Exit - DONE
             if option == 0:
                 print("\n\t\t\t\t\t\t\tBye!!!")
@@ -335,8 +356,10 @@ def main():
     # {country_A: [code, flag_image_url], country_B: [code, flag_image_url]}
     # data_parser.load_countries_data()
     user_name = input("Enter your name: ")
-    file_path = user_name + ".json"
-    storage = storage_json.StorageJson(file_path)
+    file_path_json = user_name + ".json"
+    file_path_csv = user_name + ".csv"
+    # storage = storage_json.StorageJson(file_path_json)
+    storage = storage_csv.StorageCSV(file_path_csv)
     movie_app = MovieApp(storage)
     # print(storage)  # @TEST
     # print(type(storage))  # @TEST
