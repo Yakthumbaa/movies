@@ -10,22 +10,23 @@ def is_valid_input(user_input, valid_input):
 
 def has_command_line_arg():
     """
-
+    Checks if there are any command line arguments apart from the main.py arg.
     @return:
     """
-    for arg in sys.argv:
-        print(arg)
-    condition_1 = sys.argv[0] == "main.py"
-    condition_2 = ".json" in sys.argv[1] or ".csv" in sys.argv[1]
-    return condition_1 and condition_2
+    if len(sys.argv) > 2:
+        return ".json" in sys.argv[1] or ".csv" in sys.argv[1]
+    else:
+        return False
 
 
 def get_cla_filename():
+    """
+    Retrieves the filename and parses it to identify the file type so that the correct
+    storage object can be instantiated in the main method.
+    @return:
+    """
     file_path = sys.argv[1]
-    if file_path.split(".")[1] == "csv":
-        file_type = "csv"
-    else:
-        file_type = "json"
+    file_type = file_path.split(".")[1]
     return file_path, file_type
 
 
