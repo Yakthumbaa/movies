@@ -2,6 +2,7 @@ from movie_app import MovieApp
 from storage_csv import StorageCSV
 from storage_json import StorageJson
 import sys
+import argparse
 
 
 def is_valid_input(user_input, valid_input):
@@ -13,7 +14,7 @@ def has_command_line_arg():
     Checks if there are any command line arguments apart from the main.py arg.
     @return:
     """
-    if len(sys.argv) > 2:
+    if len(sys.argv) > 1:
         return ".json" in sys.argv[1] or ".csv" in sys.argv[1]
     else:
         return False
@@ -25,9 +26,23 @@ def get_cla_filename():
     storage object can be instantiated in the main method.
     @return:
     """
+    """
     file_path = sys.argv[1]
     file_type = file_path.split(".")[1]
     return file_path, file_type
+    """
+    parser = argparse.ArgumentParser(description="Parses the file type to initialize "
+                                                 "the corresponding storage object")
+    # parser.add_argument("file_path", metavar="file_path", type=str,
+    #                    help="Enter python file + space + your_name + file_extension")
+    parser.add_argument('file_path', metavar="file_path",
+                        help="Enter python file + space + your_name + file_extension")
+    args = parser.parse_args()
+    if args.file_path:
+        # return file_path and the extension type
+        return args.file_path, args.file_path.split(".")[1]
+    else:
+        return None, None
 
 
 def main():
@@ -37,10 +52,11 @@ def main():
 
     if has_command_line_arg():
         file_path, file_type = get_cla_filename()
-        if file_type == "csv":
-            storage = StorageCSV(file_path)
-        else:
-            storage = StorageJson(file_path)
+        if file_path and file_type:
+            if file_type == "csv":
+                storage = StorageCSV(file_path)
+            else:
+                storage = StorageJson(file_path)
     else:
         try:
             while True:
