@@ -145,7 +145,7 @@ class IStorage(ABC):
         :param country:
         :return:
         """
-        file_to_read = "../movies/country_code.json"
+        file_to_read = "country_code.json"
         with open(file_to_read, "r") as reader:
             country_data = json.loads(reader.read())
         return country_data[country][0]
@@ -158,8 +158,8 @@ class IStorage(ABC):
         Using a downloaded data for good measure.
         :return: void
         """
-        file_to_read = "../movies/country_code.csv"
-        file_to_write = "../movies/country_code.json"
+        file_to_read = "country_code.csv"
+        file_to_write = "country_code.json"
         with open(file_to_read, "r") as reader:
             data = [line for line in reader.readlines() if line]
         country_data = {}
@@ -180,7 +180,7 @@ class IStorage(ABC):
         :param country:
         :return:
         """
-        file_to_read = "../movies/country_code.json"
+        file_to_read = "country_code.json"
         with open(file_to_read, "r") as reader:
             country_data = json.loads(reader.read())
         return country_data[country][1]
