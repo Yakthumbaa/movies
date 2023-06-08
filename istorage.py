@@ -51,7 +51,7 @@ class IStorage(ABC):
             movies_list = self.fetch_movie_data(self.file_path)
         num_movies = len(movies_list)
         # print(f"num_movies: {num_movies}")  # -> @TEST
-        # print(f"\n{num_movies} movies in total")  # -> @TEST
+        print(f"\n{num_movies} movies in total")
         if num_movies:
             for movies_info_dict in movies_list:
                 print(f"{movies_info_dict['title']}: {movies_info_dict['rating']}")
